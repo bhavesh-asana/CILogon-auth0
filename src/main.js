@@ -1,4 +1,11 @@
-import { createApp } from 'vue'
+import Vue from 'vue'
+import Vuex from 'vuex'
+import custosStore from "airavata-custos-portal/src/lib/store";
 import App from './App.vue'
 
-createApp(App).mount('#app')
+Vue.use(Vuex);
+new Vue({
+    custosStore,
+    render: h => h(App),
+}).$mount('#app')
+

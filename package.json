@@ -11,7 +11,8 @@
     "airavata-custos-portal": "github:apache/airavata-custos-portal",
     "core-js": "^3.8.3",
     "node-polyfill-webpack-plugin": "^2.0.1",
-    "vue": "^3.2.13"
+    "vue": "^2.6.11",
+    "vuex": "^3.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

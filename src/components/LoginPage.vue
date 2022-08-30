@@ -6,7 +6,6 @@
 import custosStore from "airavata-custos-portal/src/lib/store";
 export default {
   name: "HomePage",
-  components: {Errors, ButtonOverlay},
   store: custosStore,
   data() {
     return {

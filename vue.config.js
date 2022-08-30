@@ -1,14 +1,24 @@
-const { defineConfig } = require('@vue/cli-service')
 const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
-module.exports = defineConfig({
-  transpileDependencies: ["airavata-custos-portal"],
-  lintOnSave: false,
-  configureWebpack: {
-    plugins: [new NodePolyfillPlugin()],
-    optimization: {
-      splitChunks: {
-        chunks: "all",
-      },
+
+module.exports = {
+    configureWebpack: config => {
+        config.entry.app = [
+            './src/main.js',
+        ]
+        config.resolve.fallback = {
+            ...config.resolve.fallback,
+            "fs": false
+        }
+
+        config.plugins = [...config.plugins, new NodePolyfillPlugin()];
     },
-  },
-})
+    transpileDependencies: ["airavata-custos-portal"],
+    pluginOptions: {
+        i18n: {
+            locale: 'en',
+            fallbackLocale: 'en',
+            localeDir: 'locales',
+            enableInSFC: true
+        }
+    }
+}
